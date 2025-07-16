@@ -54,7 +54,7 @@ class AdvantageMenu(models.Model):
     description = models.CharField(max_length=100)
 
 
-#Our Products
+#Category
 class Products(models.Model):
     image = models.ImageField(upload_to='products/')
     title = models.CharField(max_length=100)
@@ -62,11 +62,11 @@ class Products(models.Model):
     last = models.CharField(max_length=100)
 
 
-class CatalogTitle(models.Model):
+class CategoryTitle(models.Model):
     title = models.CharField(max_length=100)
 
 
-class Catalog(models.Model):
+class Category(models.Model):
     image = models.ImageField(upload_to='category/')
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=100)
@@ -90,4 +90,24 @@ class News(models.Model):
     description = models.CharField(max_length=100)
 
 
+#Clients
+class ClientsTitle(models.Model):
+    title = models.CharField(max_length=100)
 
+class Clients(models.Model):
+    name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='clients/')
+
+
+#Catalog Products
+class Catalog(models.Model):
+    title = models.CharField(max_length=100)
+
+class CatalogCategory(models.Model):
+    name = models.CharField(max_length=100)
+
+
+#Products
+class Product(models.Model):
+    image = models.ImageField(upload_to='products/')
+    description = models.CharField(max_length=100)
