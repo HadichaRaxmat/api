@@ -21,6 +21,11 @@ class AboutUsSerializer(serializers.ModelSerializer):
         fields = ['id', 'image', 'title', 'text']
 
 
+class CertificateTitleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CertificateTitle
+        fields = ['id', 'title']
+
 class CertificationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Certification
@@ -93,3 +98,9 @@ class SocialSerializer(serializers.ModelSerializer):
     class Meta:
         model = Social
         fields = ['id', 'link']
+
+
+class ContactNumberSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ContactNumbers
+        fields = ['id', 'number']
