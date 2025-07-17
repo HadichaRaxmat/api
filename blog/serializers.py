@@ -9,28 +9,16 @@ class ContactUsersSerializer(serializers.ModelSerializer):
 
 
 
-class LogoSerializer(serializers.ModelSerializer):
+class HeaderSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Logo
-        fields = ['id', 'name']
-
-
-class MenuSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Menu
-        fields = ['id', 'name']
-
-
-class MainPageSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = MainPage
+        model = Header
         fields = ['id', 'image', 'title', 'text', 'last']
 
 
 class AboutUsSerializer(serializers.ModelSerializer):
     class Meta:
         model = AboutUs
-        fields = ['id', 'image', 'main', 'title', 'text', 'last']
+        fields = ['id', 'image', 'title', 'text']
 
 
 class CertificationSerializer(serializers.ModelSerializer):

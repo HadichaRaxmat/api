@@ -41,111 +41,38 @@ class ContactUsersDelete(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
-class LogoList(APIView):
+class HeaderList(APIView):
     def get(self, request):
-        data = Logo.objects.all()
-        serializer = LogoSerializer(data, many=True)
+        data = Header.objects.all()
+        serializer = HeaderSerializer(data, many=True)
         return Response(serializer.data)
 
-class LogoCreate(APIView):
+class HeaderCreate(APIView):
     def post(self, request):
-        serializer = LogoSerializer(data=request.data)
+        serializer = HeaderSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-class LogoGet(APIView):
+class HeaderGet(APIView):
     def get(self, request, pk):
-        obj = get_object_or_404(Logo, pk=pk)
-        serializer = LogoSerializer(obj)
+        obj = get_object_or_404(Header, pk=pk)
+        serializer = HeaderSerializer(obj)
         return Response(serializer.data)
 
-class LogoUpdate(APIView):
+class HeaderUpdate(APIView):
     def put(self, request, pk):
-        obj = get_object_or_404(Logo, pk=pk)
-        serializer = LogoSerializer(obj, data=request.data)
+        obj = get_object_or_404(Header, pk=pk)
+        serializer = HeaderSerializer(obj, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-class LogoDelete(APIView):
+class HeaderDelete(APIView):
     def delete(self, request, pk):
-        obj = get_object_or_404(Logo, pk=pk)
-        obj.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
-
-
-class MenuList(APIView):
-    def get(self, request):
-        data = Menu.objects.all()
-        serializer = MenuSerializer(data, many=True)
-        return Response(serializer.data)
-
-class MenuCreate(APIView):
-    def post(self, request):
-        serializer = MenuSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-class MenuGet(APIView):
-    def get(self, request, pk):
-        obj = get_object_or_404(Menu, pk=pk)
-        serializer = MenuSerializer(obj)
-        return Response(serializer.data)
-
-class MenuUpdate(APIView):
-    def put(self, request, pk):
-        obj = get_object_or_404(Menu, pk=pk)
-        serializer = MenuSerializer(obj, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-class MenuDelete(APIView):
-    def delete(self, request, pk):
-        obj = get_object_or_404(Menu, pk=pk)
-        obj.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
-
-
-
-class MainPageList(APIView):
-    def get(self, request):
-        data = MainPage.objects.all()
-        serializer = MainPageSerializer(data, many=True)
-        return Response(serializer.data)
-
-class MainPageCreate(APIView):
-    def post(self, request):
-        serializer = MainPageSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-class MainPageGet(APIView):
-    def get(self, request, pk):
-        obj = get_object_or_404(MainPage, pk=pk)
-        serializer = MainPageSerializer(obj)
-        return Response(serializer.data)
-
-class MainPageUpdate(APIView):
-    def put(self, request, pk):
-        obj = get_object_or_404(MainPage, pk=pk)
-        serializer = MainPageSerializer(obj, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-class MainPageDelete(APIView):
-    def delete(self, request, pk):
-        obj = get_object_or_404(MainPage, pk=pk)
+        obj = get_object_or_404(Header, pk=pk)
         obj.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
