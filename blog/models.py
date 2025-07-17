@@ -8,12 +8,11 @@ class ContactUsers(models.Model):
     message = models.CharField(max_length=500)
 
 
-
-
 #About Us
 class Header(models.Model):
     image = models.ImageField(upload_to="header/")
     title = models.CharField(max_length=100)
+    text = models.TextField()
 
 
 class AboutUs(models.Model):
@@ -22,19 +21,31 @@ class AboutUs(models.Model):
     text = models.CharField(max_length=500)
 
 
-#Certificate
-class Certification(models.Model):
-    image = models.ImageField(upload_to='certification/')
-    description = models.TextField()
-
-class CertificateTitle(models.Model):
-    title = models.CharField(max_length=100)
-
-
 #Advantages
 class Advantages(models.Model):
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=100)
+
+
+#Catalog Products
+class Catalog(models.Model):
+    title = models.CharField(max_length=100)
+
+
+class Product(models.Model):
+    catalog = models.ForeignKey(Catalog, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='products/')
+    description = models.CharField(max_length=100)
+
+
+#Certificate
+class CertificateTitle(models.Model):
+    title = models.CharField(max_length=100)
+
+
+class Certification(models.Model):
+    image = models.ImageField(upload_to='certification/')
+    description = models.TextField()
 
 
 #Products
@@ -64,12 +75,7 @@ class ContactNumbers(models.Model):
     number = models.CharField(max_length=100)
 
 
-
 #News
-class NewsTitle(models.Model):
-    title = models.CharField(max_length=100)
-
-
 class News(models.Model):
     image = models.ImageField(upload_to='news/')
     title = models.CharField(max_length=100)
@@ -85,13 +91,6 @@ class Clients(models.Model):
     name = models.CharField(max_length=100)
     image = models.ImageField(upload_to='clients/')
 
-
-#Catalog Products
-class Catalog(models.Model):
-    title = models.CharField(max_length=100)
-
-
-class Product(models.Model):
-    catalog = models.ForeignKey(Catalog, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='products/')
-    description = models.CharField(max_length=100)
+#Social
+class Social(models.Model):
+    link = models.URLField()

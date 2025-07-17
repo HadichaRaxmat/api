@@ -55,13 +55,8 @@ class CategorySerializer(serializers.ModelSerializer):
 class ContactUsSerializer(serializers.ModelSerializer):
     class Meta:
         model = ContactUs
-        fields = ['id', 'email', 'phone', 'location']
+        fields = ['id', 'email', 'location']
 
-
-class NewsTitleSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = NewsTitle
-        fields = ['id', 'title']
 
 
 class NewsSerializer(serializers.ModelSerializer):
@@ -93,3 +88,8 @@ class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
         fields = ['id', 'image', 'description']
+
+class SocialSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Social
+        fields = ['id', 'link']

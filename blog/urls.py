@@ -55,11 +55,6 @@ urlpatterns = [
     path('contact-us/<int:pk>/update/', ContactUsUpdate.as_view()),
     path('contact-us/<int:pk>/delete/', ContactUsDelete.as_view()),
 
-    path('news-title/', NewsTitleList.as_view()),
-    path('news-title/create/', NewsTitleCreate.as_view()),
-    path('news-title/<int:pk>/', NewsTitleGet.as_view()),
-    path('news-title/<int:pk>/update/', NewsTitleUpdate.as_view()),
-    path('news-title/<int:pk>/delete/', NewsTitleDelete.as_view()),
 
     path('news/', NewsList.as_view()),
     path('news/create/', NewsCreate.as_view()),

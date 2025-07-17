@@ -331,43 +331,6 @@ class ContactUsDelete(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
-class NewsTitleList(APIView):
-    def get(self, request):
-        data = NewsTitle.objects.all()
-        serializer = NewsTitleSerializer(data, many=True)
-        return Response(serializer.data)
-
-class NewsTitleCreate(APIView):
-    def post(self, request):
-        serializer = NewsTitleSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-class NewsTitleGet(APIView):
-    def get(self, request, pk):
-        obj = get_object_or_404(NewsTitle, pk=pk)
-        serializer = NewsTitleSerializer(obj)
-        return Response(serializer.data)
-
-class NewsTitleUpdate(APIView):
-    def put(self, request, pk):
-        obj = get_object_or_404(NewsTitle, pk=pk)
-        serializer = NewsTitleSerializer(obj, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-class NewsTitleDelete(APIView):
-    def delete(self, request, pk):
-        obj = get_object_or_404(NewsTitle, pk=pk)
-        obj.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
-
-
-
 class NewsList(APIView):
     def get(self, request):
         data = News.objects.all()
