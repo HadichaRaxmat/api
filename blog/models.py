@@ -4,8 +4,8 @@ from django.db import models
 #Contact Users
 class ContactUsers(models.Model):
     name = models.CharField(max_length=30)
-    email = models.CharField(max_length=30)
-    message = models.EmailField()
+    email = models.EmailField(max_length=30)
+    message = models.CharField(max_length=500)
 
 
 #Logo
@@ -38,6 +38,7 @@ class AboutUs(models.Model):
     title = models.CharField(max_length=100)
     text = models.CharField(max_length=500)
     last = models.CharField(max_length=100)
+
 
 class Certification(models.Model):
     image = models.ImageField(upload_to='certification/')
@@ -94,6 +95,7 @@ class News(models.Model):
 class ClientsTitle(models.Model):
     title = models.CharField(max_length=100)
 
+
 class Clients(models.Model):
     name = models.CharField(max_length=100)
     image = models.ImageField(upload_to='clients/')
@@ -102,6 +104,7 @@ class Clients(models.Model):
 #Catalog Products
 class Catalog(models.Model):
     title = models.CharField(max_length=100)
+
 
 class CatalogCategory(models.Model):
     name = models.CharField(max_length=100)
