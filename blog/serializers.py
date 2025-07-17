@@ -1,7 +1,5 @@
 from rest_framework import serializers
-from .models import (ContactUsers, Logo, Menu, MainPage,AboutUs, Certification, AdvantageMenu,
-                     Advantage, Products, CategoryTitle, Category, ContactUs, News,
-                     NewsTitle, ClientsTitle, Clients, CatalogCategory, Catalog, Product)
+from .models import *
 
 
 class ContactUsersSerializer(serializers.ModelSerializer):

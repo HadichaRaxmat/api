@@ -1,0 +1,118 @@
+from django.urls import path
+from .views import *
+
+urlpatterns = [
+    path('contact-users/', ContactUsersList.as_view()),
+    path('contact-users/create/', ContactUsersCreate.as_view()),
+    path('contact-users/<int:pk>/', ContactUsersGet.as_view()),
+    path('contact-users/<int:pk>/update/', ContactUsersUpdate.as_view()),
+    path('contact-users/<int:pk>/delete/', ContactUsersDelete.as_view()),
+
+    path('logo/', LogoList.as_view()),
+    path('logo/create/', LogoCreate.as_view()),
+    path('logo/<int:pk>/', LogoGet.as_view()),
+    path('logo/<int:pk>/update/', LogoUpdate.as_view()),
+    path('logo/<int:pk>/delete/', LogoDelete.as_view()),
+
+    path('menu/', MenuList.as_view()),
+    path('menu/create/', MenuCreate.as_view()),
+    path('menu/<int:pk>/', MenuGet.as_view()),
+    path('menu/<int:pk>/update/', MenuUpdate.as_view()),
+    path('menu/<int:pk>/delete/', MenuDelete.as_view()),
+
+    path('mainpage/', MainPageList.as_view()),
+    path('mainpage/create/', MainPageCreate.as_view()),
+    path('mainpage/<int:pk>/', MainPageGet.as_view()),
+    path('mainpage/<int:pk>/update/', MainPageUpdate.as_view()),
+    path('mainpage/<int:pk>/delete/', MainPageDelete.as_view()),
+
+    path('aboutus/', AboutUsList.as_view()),
+    path('aboutus/create/', AboutUsCreate.as_view()),
+    path('aboutus/<int:pk>/', AboutUsGet.as_view()),
+    path('aboutus/<int:pk>/update/', AboutUsUpdate.as_view()),
+    path('aboutus/<int:pk>/delete/', AboutUsDelete.as_view()),
+
+    path('certification/', CertificationList.as_view()),
+    path('certification/create/', CertificationCreate.as_view()),
+    path('certification/<int:pk>/', CertificationGet.as_view()),
+    path('certification/<int:pk>/update/', CertificationUpdate.as_view()),
+    path('certification/<int:pk>/delete/', CertificationDelete.as_view()),
+
+    path('advantage/', AdvantageList.as_view()),
+    path('advantage/create/', AdvantageCreate.as_view()),
+    path('advantage/<int:pk>/', AdvantageGet.as_view()),
+    path('advantage/<int:pk>/update/', AdvantageUpdate.as_view()),
+    path('advantage/<int:pk>/delete/', AdvantageDelete.as_view()),
+
+    path('advantagemenu/', AdvantageMenuList.as_view()),
+    path('advantagemenu/create/', AdvantageMenuCreate.as_view()),
+    path('advantagemenu/<int:pk>/', AdvantageMenuGet.as_view()),
+    path('advantagemenu/<int:pk>/update/', AdvantageMenuUpdate.as_view()),
+    path('advantagemenu/<int:pk>/delete/', AdvantageMenuDelete.as_view()),
+
+    path('products/', ProductsList.as_view()),
+    path('products/create/', ProductsCreate.as_view()),
+    path('products/<int:pk>/', ProductsGet.as_view()),
+    path('products/<int:pk>/update/', ProductsUpdate.as_view()),
+    path('products/<int:pk>/delete/', ProductsDelete.as_view()),
+
+    path('category-title/', CategoryTitleList.as_view()),
+    path('category-title/create/', CategoryTitleCreate.as_view()),
+    path('category-title/<int:pk>/', CategoryTitleGet.as_view()),
+    path('category-title/<int:pk>/update/', CategoryTitleUpdate.as_view()),
+    path('category-title/<int:pk>/delete/', CategoryTitleDelete.as_view()),
+
+    path('category/', CategoryList.as_view()),
+    path('category/create/', CategoryCreate.as_view()),
+    path('category/<int:pk>/', CategoryGet.as_view()),
+    path('category/<int:pk>/update/', CategoryUpdate.as_view()),
+    path('category/<int:pk>/delete/', CategoryDelete.as_view()),
+
+    path('contact-us/', ContactUsList.as_view()),
+    path('contact-us/create/', ContactUsCreate.as_view()),
+    path('contact-us/<int:pk>/', ContactUsGet.as_view()),
+    path('contact-us/<int:pk>/update/', ContactUsUpdate.as_view()),
+    path('contact-us/<int:pk>/delete/', ContactUsDelete.as_view()),
+
+    path('news-title/', NewsTitleList.as_view()),
+    path('news-title/create/', NewsTitleCreate.as_view()),
+    path('news-title/<int:pk>/', NewsTitleGet.as_view()),
+    path('news-title/<int:pk>/update/', NewsTitleUpdate.as_view()),
+    path('news-title/<int:pk>/delete/', NewsTitleDelete.as_view()),
+
+    path('news/', NewsList.as_view()),
+    path('news/create/', NewsCreate.as_view()),
+    path('news/<int:pk>/', NewsGet.as_view()),
+    path('news/<int:pk>/update/', NewsUpdate.as_view()),
+    path('news/<int:pk>/delete/', NewsDelete.as_view()),
+
+    path('clients-title/', ClientsTitleList.as_view()),
+    path('clients-title/create/', ClientsTitleCreate.as_view()),
+    path('clients-title/<int:pk>/', ClientsTitleGet.as_view()),
+    path('clients-title/<int:pk>/update/', ClientsTitleUpdate.as_view()),
+    path('clients-title/<int:pk>/delete/', ClientsTitleDelete.as_view()),
+
+    path('clients/', ClientsList.as_view()),
+    path('clients/create/', ClientsCreate.as_view()),
+    path('clients/<int:pk>/', ClientsGet.as_view()),
+    path('clients/<int:pk>/update/', ClientsUpdate.as_view()),
+    path('clients/<int:pk>/delete/', ClientsDelete.as_view()),
+
+    path('catalog/', CatalogList.as_view()),
+    path('catalog/create/', CatalogCreate.as_view()),
+    path('catalog/<int:pk>/', CatalogGet.as_view()),
+    path('catalog/<int:pk>/update/', CatalogUpdate.as_view()),
+    path('catalog/<int:pk>/delete/', CatalogDelete.as_view()),
+
+    path('catalog-category/', CatalogCategoryList.as_view()),
+    path('catalog-category/create/', CatalogCategoryCreate.as_view()),
+    path('catalog-category/<int:pk>/', CatalogCategoryGet.as_view()),
+    path('catalog-category/<int:pk>/update/', CatalogCategoryUpdate.as_view()),
+    path('catalog-category/<int:pk>/delete/', CatalogCategoryDelete.as_view()),
+
+    path('product/', ProductList.as_view()),
+    path('product/create/', ProductCreate.as_view()),
+    path('product/<int:pk>/', ProductGet.as_view()),
+    path('product/<int:pk>/update/', ProductUpdate.as_view()),
+    path('product/<int:pk>/delete/', ProductDelete.as_view()),
+]
