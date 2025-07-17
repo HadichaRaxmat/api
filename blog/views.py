@@ -57,7 +57,7 @@ class ContactUsViewSet(viewsets.ModelViewSet):
 
 class ContactNumbersViewSet(viewsets.ModelViewSet):
     queryset = ContactNumbers.objects.all()
-    serializer_class = ContactNumberSerializer
+    serializer_class = ContactNumbersSerializer
 
 class NewsViewSet(viewsets.ModelViewSet):
     queryset = News.objects.all()

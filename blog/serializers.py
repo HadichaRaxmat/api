@@ -100,7 +100,7 @@ class SocialSerializer(serializers.ModelSerializer):
         fields = ['id', 'link']
 
 
-class ContactNumberSerializer(serializers.ModelSerializer):
+class ContactNumbersSerializer(serializers.ModelSerializer):
     class Meta:
         model = ContactNumbers
         fields = ['id', 'number']
