@@ -27,15 +27,9 @@ class CertificationSerializer(serializers.ModelSerializer):
         fields = ['id', 'image', 'description']
 
 
-class AdvantageSerializer(serializers.ModelSerializer):
+class AdvantagesSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Advantage
-        fields = ['id', 'title']
-
-
-class AdvantageMenuSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = AdvantageMenu
+        model = Advantages
         fields = ['id', 'title', 'description']
 
 
@@ -93,11 +87,6 @@ class CatalogSerializer(serializers.ModelSerializer):
         model = Catalog
         fields = ['id', 'title']
 
-
-class CatalogCategorySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = CatalogCategory
-        fields = ['id', 'name']
 
 
 class ProductSerializer(serializers.ModelSerializer):

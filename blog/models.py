@@ -14,8 +14,6 @@ class ContactUsers(models.Model):
 class Header(models.Model):
     image = models.ImageField(upload_to="header/")
     title = models.CharField(max_length=100)
-    text = models.CharField(max_length=500)
-    last = models.CharField(max_length=100)
 
 
 class AboutUs(models.Model):
@@ -24,27 +22,26 @@ class AboutUs(models.Model):
     text = models.CharField(max_length=500)
 
 
+#Certificate
 class Certification(models.Model):
     image = models.ImageField(upload_to='certification/')
     description = models.TextField()
 
-
-#Advantages
-class Advantage(models.Model):
+class CertificateTitle(models.Model):
     title = models.CharField(max_length=100)
 
 
-class AdvantageMenu(models.Model):
+#Advantages
+class Advantages(models.Model):
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=100)
 
 
-#Category
+#Products
 class Products(models.Model):
     image = models.ImageField(upload_to='products/')
     title = models.CharField(max_length=100)
     text = models.CharField(max_length=500)
-    last = models.CharField(max_length=100)
 
 
 class CategoryTitle(models.Model):
@@ -94,11 +91,7 @@ class Catalog(models.Model):
     title = models.CharField(max_length=100)
 
 
-class CatalogCategory(models.Model):
-    name = models.CharField(max_length=100)
-
-
-#Products
 class Product(models.Model):
+    catalog = models.ForeignKey(Catalog, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='products/')
     description = models.CharField(max_length=100)

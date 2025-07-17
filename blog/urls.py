@@ -25,17 +25,11 @@ urlpatterns = [
     path('certification/<int:pk>/update/', CertificationUpdate.as_view()),
     path('certification/<int:pk>/delete/', CertificationDelete.as_view()),
 
-    path('advantage/', AdvantageList.as_view()),
-    path('advantage/create/', AdvantageCreate.as_view()),
-    path('advantage/<int:pk>/', AdvantageGet.as_view()),
-    path('advantage/<int:pk>/update/', AdvantageUpdate.as_view()),
-    path('advantage/<int:pk>/delete/', AdvantageDelete.as_view()),
-
-    path('advantagemenu/', AdvantageMenuList.as_view()),
-    path('advantagemenu/create/', AdvantageMenuCreate.as_view()),
-    path('advantagemenu/<int:pk>/', AdvantageMenuGet.as_view()),
-    path('advantagemenu/<int:pk>/update/', AdvantageMenuUpdate.as_view()),
-    path('advantagemenu/<int:pk>/delete/', AdvantageMenuDelete.as_view()),
+    path('advantages/', AdvantagesList.as_view()),
+    path('advantage/create/', AdvantagesCreate.as_view()),
+    path('advantage/<int:pk>/', AdvantagesGet.as_view()),
+    path('advantage/<int:pk>/update/', AdvantagesUpdate.as_view()),
+    path('advantage/<int:pk>/delete/', AdvantagesDelete.as_view()),
 
     path('products/', ProductsList.as_view()),
     path('products/create/', ProductsCreate.as_view()),
@@ -90,12 +84,6 @@ urlpatterns = [
     path('catalog/<int:pk>/', CatalogGet.as_view()),
     path('catalog/<int:pk>/update/', CatalogUpdate.as_view()),
     path('catalog/<int:pk>/delete/', CatalogDelete.as_view()),
-
-    path('catalog-category/', CatalogCategoryList.as_view()),
-    path('catalog-category/create/', CatalogCategoryCreate.as_view()),
-    path('catalog-category/<int:pk>/', CatalogCategoryGet.as_view()),
-    path('catalog-category/<int:pk>/update/', CatalogCategoryUpdate.as_view()),
-    path('catalog-category/<int:pk>/delete/', CatalogCategoryDelete.as_view()),
 
     path('product/', ProductList.as_view()),
     path('product/create/', ProductCreate.as_view()),

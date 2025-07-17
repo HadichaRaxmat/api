@@ -150,74 +150,38 @@ class CertificationDelete(APIView):
 
 
 
-class AdvantageList(APIView):
+class AdvantagesList(APIView):
     def get(self, request):
-        data = Advantage.objects.all()
-        serializer = AdvantageSerializer(data, many=True)
+        data = Advantages.objects.all()
+        serializer = AdvantagesSerializer(data, many=True)
         return Response(serializer.data)
 
-class AdvantageCreate(APIView):
+class AdvantagesCreate(APIView):
     def post(self, request):
-        serializer = AdvantageSerializer(data=request.data)
+        serializer = AdvantagesSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-class AdvantageGet(APIView):
+class AdvantagesGet(APIView):
     def get(self, request, pk):
-        obj = get_object_or_404(Advantage, pk=pk)
-        serializer = AdvantageSerializer(obj)
+        obj = get_object_or_404(Advantages, pk=pk)
+        serializer = AdvantagesSerializer(obj)
         return Response(serializer.data)
 
-class AdvantageUpdate(APIView):
+class AdvantagesUpdate(APIView):
     def put(self, request, pk):
-        obj = get_object_or_404(Advantage, pk=pk)
-        serializer = AdvantageSerializer(obj, data=request.data)
+        obj = get_object_or_404(Advantages, pk=pk)
+        serializer = AdvantagesSerializer(obj, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-class AdvantageDelete(APIView):
+class AdvantagesDelete(APIView):
     def delete(self, request, pk):
-        obj = get_object_or_404(Advantage, pk=pk)
-        obj.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
-
-
-class AdvantageMenuList(APIView):
-    def get(self, request):
-        data = AdvantageMenu.objects.all()
-        serializer = AdvantageMenuSerializer(data, many=True)
-        return Response(serializer.data)
-
-class AdvantageMenuCreate(APIView):
-    def post(self, request):
-        serializer = AdvantageMenuSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-class AdvantageMenuGet(APIView):
-    def get(self, request, pk):
-        obj = get_object_or_404(AdvantageMenu, pk=pk)
-        serializer = AdvantageMenuSerializer(obj)
-        return Response(serializer.data)
-
-class AdvantageMenuUpdate(APIView):
-    def put(self, request, pk):
-        obj = get_object_or_404(AdvantageMenu, pk=pk)
-        serializer = AdvantageMenuSerializer(obj, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-class AdvantageMenuDelete(APIView):
-    def delete(self, request, pk):
-        obj = get_object_or_404(AdvantageMenu, pk=pk)
+        obj = get_object_or_404(Advantages, pk=pk)
         obj.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
@@ -547,41 +511,6 @@ class CatalogDelete(APIView):
         obj.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-
-class CatalogCategoryList(APIView):
-    def get(self, request):
-        data = CatalogCategory.objects.all()
-        serializer = CatalogCategorySerializer(data, many=True)
-        return Response(serializer.data)
-
-class CatalogCategoryCreate(APIView):
-    def post(self, request):
-        serializer = CatalogCategorySerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-class CatalogCategoryGet(APIView):
-    def get(self, request, pk):
-        obj = get_object_or_404(CatalogCategory, pk=pk)
-        serializer = CatalogCategorySerializer(obj)
-        return Response(serializer.data)
-
-class CatalogCategoryUpdate(APIView):
-    def put(self, request, pk):
-        obj = get_object_or_404(CatalogCategory, pk=pk)
-        serializer = CatalogCategorySerializer(obj, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-class CatalogCategoryDelete(APIView):
-    def delete(self, request, pk):
-        obj = get_object_or_404(CatalogCategory, pk=pk)
-        obj.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 class ProductList(APIView):
