@@ -33,19 +33,9 @@ class Catalog(models.Model):
 
 
 class Product(models.Model):
-    catalog = models.ForeignKey(Catalog, on_delete=models.CASCADE)
+    catalog = models.ForeignKey(Catalog, related_name='products', on_delete=models.SET_NULL, null=True, blank=True)
     image = models.ImageField(upload_to='products/')
     description = models.CharField(max_length=100)
-
-
-#Certificate
-class CertificateTitle(models.Model):
-    title = models.CharField(max_length=100)
-
-
-class Certification(models.Model):
-    image = models.ImageField(upload_to='certification/')
-    description = models.TextField()
 
 
 #Products
@@ -55,11 +45,25 @@ class Products(models.Model):
     text = models.CharField(max_length=500)
 
 
+
+#Certificate
+class CertificateTitle(models.Model):
+    title = models.CharField(max_length=100)
+
+
+class Certification(models.Model):
+    title = models.ForeignKey(CertificateTitle, on_delete=models.SET_NULL, null=True, blank=True)
+    image = models.ImageField(upload_to='certification/')
+    description = models.TextField()
+
+
+#Category
 class CategoryTitle(models.Model):
     title = models.CharField(max_length=100)
 
 
 class Category(models.Model):
+    category_title = models.ForeignKey(CategoryTitle, on_delete=models.SET_NULL, null=True, blank=True, related_name="categories")
     image = models.ImageField(upload_to='category/')
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=100)
@@ -72,7 +76,13 @@ class ContactUs(models.Model):
 
 
 class ContactNumbers(models.Model):
+    contact_us = models.ForeignKey(ContactUs, on_delete=models.CASCADE, related_name="numbers")
     number = models.CharField(max_length=100)
+
+#Social
+class Social(models.Model):
+    contact_us = models.ForeignKey(ContactUs, on_delete=models.CASCADE, related_name="social")
+    link = models.URLField()
 
 
 #News
@@ -88,9 +98,7 @@ class ClientsTitle(models.Model):
 
 
 class Clients(models.Model):
+    title = models.ForeignKey(ClientsTitle, on_delete=models.SET_NULL, null=True, blank=True,related_name="clients")
     name = models.CharField(max_length=100)
     image = models.ImageField(upload_to='clients/')
 
-#Social
-class Social(models.Model):
-    link = models.URLField()
